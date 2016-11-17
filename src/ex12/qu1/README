@@ -1,0 +1,21 @@
+            
+        SOCKET JAVA - MODE CONNECTE
+        ---------------------------
+
+            TP SCS #5 MASTER 1 INFO 
+            -----------------------
+
+Exemple de base de programmes socket en java, envoi d'une chaine
+
+Compilation :
+------------
+
+javac *.java
+
+
+Execution :
+-----------
+
+java serveur
+
+java client

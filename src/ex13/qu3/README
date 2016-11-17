@@ -1,0 +1,4 @@
+
+Je mets un objet de la classe Donnes dans un ObjectOutputStream et je le 
+recupere dans un ObjectInputStream. Attention, la classe passee en parametre
+doit etre serializable !

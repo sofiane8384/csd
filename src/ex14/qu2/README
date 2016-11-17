@@ -1,0 +1,7 @@
+
+Communications entre C et java par sockets :
+
+	communiquent : client. java avec server.c
+		       client.java avec server.java
+
+     a tester client.c server.java mais c'est comme le reste
