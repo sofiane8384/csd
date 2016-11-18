@@ -8,11 +8,22 @@ int main(int argc, char *argv[]) {
   /* Mettre le code du client ici  */
 
    int desc_sock;
-   desc_sock = socketClient_EAD("localhost",2612);
+   char *chaine ="Hello World";
+   int envoyes;
 
-   if(desc_sock <0){
+   desc_sock = socketClient_EAD("localhost", 2625);
+
+   if(desc_sock < 0){
     printf("Erreur Creaction socket\n");
+   }
+   
+   envoyes= send(desc_sock,chaine,12,0);
+ 
+  if(envoyes ==-1 ) {
+     printf("erreur e l'envoi\n");
   }
+
+  close(desc_sock);
 
   return 0;
 }
