@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
   int communication_sock;
   int desc_sock ;
 
- char buf[20];
+ int *valeur;
  int recus;
 
  desc_sock=socketServeur_EAD(2609);
@@ -29,14 +29,14 @@ if(desc_sock < 0)
      return 2;
   }
   
- recus = recv(communication_sock,buf,sizeof(buf),0);
+ recus = recv(communication_sock,&valeur,sizeof(valeur),0);
  
  if(recus == -1){
      printf("Erreur a la reception\n");
    return 1;
  }
  
- printf("j'ai recu : %s\n", buf);
+ printf("j'ai recu : %d\n", valeur);
 
  close(desc_sock);
  

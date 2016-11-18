@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
   /* Mettre le code du recepteur ici  */
 
   int descripteur_socket;
-  int val;
+  char buf[20];
   int recus;
   descripteur_socket = socketUDP_EAD(2611);
 
@@ -16,9 +16,9 @@ int main(int argc, char *argv[]) {
 }
     
 
-  recus = recvfrom(descripteur_socket,&val,sizeof(int),0,NULL,NULL);
+  recus = recvfrom(descripteur_socket,buf,sizeof(buf),0,NULL,NULL);
 
-  printf("J'ai recu la valeur : %d\n",val);
+  printf("J'ai recu la valeur : %s\n",buf);
 
   close(descripteur_socket);
 
