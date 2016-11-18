@@ -8,7 +8,6 @@ int main(int argc, char *argv[]) {
   /* Mettre le code du client ici  */
 
    int desc_sock;
-   //char *chaine ="Hello World";
     int val = 42;
     int *valeur;
     valeur=&val;
