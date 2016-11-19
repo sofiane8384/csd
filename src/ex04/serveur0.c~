@@ -9,7 +9,13 @@ int main(int argc, char *argv[]) {
   int communication_sock;
   int desc_sock ;
 
- int valeur[4];
+  typedef struct 
+   {
+      int age;
+      char prenom[7]; 
+   }Personne ;
+  Personne p1;
+ //struct Personne *p1=NULL;
  int recus;
 
  desc_sock=socketServeur_EAD(2609);
@@ -29,20 +35,17 @@ if(desc_sock < 0)
      return 2;
   }
   
- recus = recv(communication_sock,valeur,4 * sizeof(int),0);
+ recus = recv(communication_sock,p1,sizeof(Personne),0);
  
  if(recus == -1){
      printf("Erreur a la reception\n");
    return 1;
  }
 
- int i = 0;
- for(i=0;i<4;i++)
-  {
-   printf("%d\n",valeur[i]);
-  }
+  printf("%d %s\n",p1.age,p1.prenom);
 
- //printf("j'ai recu un tableau de : %d valeur\n", sizeof(&valeur));
+
+
 
  close(desc_sock);
  
